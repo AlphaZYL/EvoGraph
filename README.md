@@ -1,6 +1,6 @@
 # EvoGraph: Synergizing Evolutionary Semantics and Tail-aware Graph Contrastive Learning for Protein-Protein Interaction Prediction
 
-A novel framework that synergizes deep evolutionary semantics with tail-aware graph representation learning.
+A novel framework that synergizes deep evolutionary semantics with tail-aware graph representation learning for PPI prediction.
 
 ---
 
@@ -25,9 +25,12 @@ Code/
 └─ data/
    ├─ *.seqs.tsv                 # protein sequences
    ├─ *.actions.txt              # multi-label interaction annotations
-   └─ *_bfs.json / *_dfs.json    # official splits
-   
+   ├─ *_bfs.json / *_dfs.json    # official splits
+   └─ *_esm2_emb.pt              # precomputed ESM-2 embeddings
+
 ```
+
+---
 
 ## Requirements
 
@@ -46,6 +49,8 @@ pip install torch torchvision torchaudio
 pip install torch-geometric fair-esm numpy scikit-learn gensim
 ```
 
+---
+
 ## Data
 
 Included datasets:
@@ -60,6 +65,8 @@ Each dataset typically provides:
 - `*.seqs.tsv`: protein ID + amino-acid sequence
 - `*.actions.txt`: multi-label interaction pairs
 - `*_bfs.json` / `*_dfs.json`: fixed splits
+
+---
 
 ## Quick Start
 
@@ -94,6 +101,8 @@ Example:
 python train.py -m bfs -i1 data/SHS27K.seqs.tsv -i2 data/SHS27K.actions.txt -o result/SHS27K_bfs_new -precomputed_emb data/SHS27K_esm2_emb.pt
 ```
 
+---
+
 ## Key Arguments
 
 - `-i1`: sequence file (`*.seqs.tsv`)
@@ -111,6 +120,8 @@ python train.py -m bfs -i1 data/SHS27K.seqs.tsv -i2 data/SHS27K.actions.txt -o r
 - `-loss_type`: `asymmetric` (default) / `bce` / `focal`
 - `--lr` / `--weight_decay`: optimizer hyperparameters
 
+---
+
 ## Outputs
 
 With `-o result/xxx`, typical outputs include:
@@ -119,6 +130,8 @@ With `-o result/xxx`, typical outputs include:
 - `result/xxx_best_model.pt`: best model weights
 - `result/xxx.pt`: best-epoch predictions (pred/actual)
 - `result/xxx.json`: saved split for `bfs/dfs/random`
+
+---
 
 ## Repro Tips
 
