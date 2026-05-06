@@ -25,8 +25,8 @@ Code/
 └─ data/
    ├─ *.seqs.tsv                 # protein sequences
    ├─ *.actions.txt              # multi-label interaction annotations
-   ├─ *_bfs.json / *_dfs.json    # official splits
-   └─ *_esm2_emb.pt              # precomputed ESM-2 embeddings
+   └─ *_bfs.json / *_dfs.json    # official splits
+   
 ```
 
 ## Requirements
@@ -60,11 +60,10 @@ Each dataset typically provides:
 - `*.seqs.tsv`: protein ID + amino-acid sequence
 - `*.actions.txt`: multi-label interaction pairs
 - `*_bfs.json` / `*_dfs.json`: fixed splits
-- `*_esm2_emb.pt`: precomputed embeddings (recommended)
 
 ## Quick Start
 
-### 1) (Optional) Precompute ESM-2 Embeddings
+### 1) (Optional) Precompute Embeddings
 
 If you do not use the bundled `*_esm2_emb.pt`, you can generate your own:
 
@@ -127,11 +126,14 @@ With `-o result/xxx`, typical outputs include:
 - Use `-m read` with fixed `*_bfs.json` / `*_dfs.json` for fair comparisons.
 - Reduce `-b` if GPU memory is limited.
 
-## Citation
+---
 
-If you use this project, please cite the corresponding paper (add BibTeX here).
+## Code Availability
 
-## Acknowledgements
+The code and pretrained models will be made publicly available upon acceptance.
 
-- [ESM / fair-esm](https://github.com/facebookresearch/esm)
-- [PyTorch Geometric](https://github.com/pyg-team/pytorch_geometric)
+---
+
+## License
+
+This project will be released under the MIT License.
