@@ -1,12 +1,15 @@
-# EvoGraph
+# EvoGraph: Synergizing Evolutionary Semantics and Tail-aware Graph Contrastive Learning for Protein-Protein Interaction Prediction
 
-EvoGraph is a multi-label protein–protein interaction (PPI) prediction framework that combines:
+A novel framework that synergizes deep evolutionary semantics with tail-aware graph representation learning.
 
-- ESM-2 sequence representations
-- multi-relation graph neural networks (GraphSAGE + AntiSymmetricConv)
-- tail-aware contrastive learning for long-tail classes
+---
 
-This repository includes multiple datasets and precomputed ESM-2 embeddings for quick reproduction.
+## Overview
+
+The framework consists of three modules: (A) Evolutionary Semantic Encoding, which utilizes a pre-trained ESM-2 backbone for initial feature extraction; (B) Tail-aware Graph Contrastive Learning, synergizing a Multi-view GNN Encoder (B1) to capture topological heterogeneity and a Tail-aware Contrastive Learning module (B2) for latent space regularization; and (C) Feature Fusion \& Prediction, employing a hybrid fusion strategy for multi-label classification.
+![method](framework.png)
+
+---
 
 ## Project Structure
 
